@@ -1,6 +1,9 @@
 # coding: utf-8
+
 import csv
 from pathlib import Path
+
+
 print("--------------------------Part 1------------------------------")
 """Part 1: Automate the Calculations.
 
@@ -24,13 +27,13 @@ print(f"There are {number_of_loans} loans from the list.")
 # @TODO: Use the `sum` function to calculate the total of all loans in the list.
 # Print the total value of the loans
 total_value_of_loans = sum(loan_costs)
-print(f"The total value of the loans is: {total_value_of_loans}")
+print(f"The total value of the loans is: ${total_value_of_loans}")
 
 # What is the average loan amount from the list?
 # @TODO: Using the sum of all loans and the total number of loans, calculate the average loan price.
 # Print the average loan amount
 average_loan_amount = total_value_of_loans/ number_of_loans
-print(f"The average loan amount is: {average_loan_amount}")
+print(f"The average loan amount is: ${average_loan_amount}")
 
 print("--------------------------Part 2------------------------------")
 
@@ -120,10 +123,7 @@ def get_present_value(future_value,remaining_months,annual_discount_rate):
 # @TODO: Use the function to calculate the present value of the new loan given below.
 #    Use an `annual_discount_rate` of 0.2 for this new loan calculation.
 annual_discount_rate = 0.2
-future_value = new_loan.get("future_value")
-remaining_months = new_loan.get("remaining_months")
-
-present_value = get_present_value(future_value,remaining_months,annual_discount_rate)
+present_value = get_present_value(new_loan.get("future_value"),new_loan.get("remaining_months"),annual_discount_rate)
 
 print(f"The present value of the new loan is: ${present_value: .2f}")
 
